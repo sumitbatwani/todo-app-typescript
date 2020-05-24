@@ -1,38 +1,38 @@
-.App {
-  text-align: left;
+.newTodoBox {
+  padding: 2rem;
+  border: 1px solid;
+  margin: 2rem;
+  text-align: center;
+  background: antiquewhite;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.inputBar {
+  width: 35rem;
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+  text-align: center;
+  color: chocolate;
+  border: 2px solid black;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.submitButton {
+  margin: 1rem 0 0 0;
+  font-size: 1rem;
+  color: black;
+  background: darkseagreen;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.listItem {
+  font-size: 1.5rem;
+  color: chocolate;
+  border: 1px solid;
+  padding: 1rem;
+  margin: 2rem;
+}
+
+.deleteNote {
+  margin: 0 0 0 0.5rem;
+  font-size: 0.8rem;
+  background: red;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }

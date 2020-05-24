@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import '../App.css';
 
 interface AddTodoType {
   addTodo: (a: string) => void;
@@ -6,20 +7,27 @@ interface AddTodoType {
 const AddTodo: React.FC<AddTodoType> = (props) => {
   const refText = useRef<HTMLInputElement>(null);
   return (
-    <div>
+    <div className='newTodoBox'>
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          props.addTodo(refText.current!.value);
+          const note = refText.current!.value;
+          if (note) {
+            props.addTodo(note);
+            refText.current!.value = '';
+          }
         }}
       >
         <input
           id='todo-input'
+          className='inputBar'
           name='todo-input'
-          placeholder='enter text'
+          placeholder='Write something!'
           ref={refText}
         />
-        <button>Submit</button>
+        <div>
+          <button className='submitButton'>ADD</button>
+        </div>
       </form>
     </div>
   );

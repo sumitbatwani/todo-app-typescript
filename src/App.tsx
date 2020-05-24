@@ -3,10 +3,12 @@ import TodoList from './components/TodoList';
 import AddTodo from './components/AddTodo';
 import './App.css';
 
+type Todo = {
+  id: string;
+  text: string;
+};
 const App: React.FC = () => {
-  const [todoList, setTodoList] = useState<{ id: string; text: string }[]>([
-    { id: Math.random().toString(), text: '' }
-  ]);
+  const [todoList, setTodoList] = useState<Todo[]>([]);
 
   const addTodoFunc = (text: string) => {
     setTodoList((prevList) => [
@@ -18,10 +20,14 @@ const App: React.FC = () => {
     ]);
   };
 
+  const deleteNote = (id: string) => {
+    setTodoList((prevList) => prevList.filter((el) => el.id !== id));
+  };
+
   return (
     <div className='App'>
       <AddTodo addTodo={addTodoFunc} />
-      <TodoList item={todoList} />
+      <TodoList item={todoList} deleteNote={deleteNote} />
     </div>
   );
 };
